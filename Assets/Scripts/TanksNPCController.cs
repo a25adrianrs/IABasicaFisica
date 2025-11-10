@@ -6,7 +6,9 @@ using UnityEngine;
 // - Calcula un ángulo de tiro para alcanzar ao `enemy` dependendo da velocidade da bala e da gravidade.
 // - Rota a base do inimigo cara ao obxectivo e rota o canón segundo o ángulo calculado.
 // - Dispara un prefab `bullet` establecendo a súa velocidade inicial.
-public class TanksNPCController : MonoBehaviour {
+// Cambio para Commit Nuevo
+public class TanksNPCController : MonoBehaviour
+{
 
     // Prefab da bala a instanciar ao disparar.
     public GameObject bullet;
@@ -26,21 +28,24 @@ public class TanksNPCController : MonoBehaviour {
     private float moveSpeed = 1.0f; // velocidade de desprazamento da unidade cando non dispara
 
     // Control de cadencia de disparo
-    static float delayReset = 0.2f; 
-    float delay = delayReset; 
+    static float delayReset = 0.2f;
+    float delay = delayReset;
 
     // Instancia o prefab da bala e lle dá a velocidade inicial ao Rigidbody.
-    void CreateBullet() {
+    void CreateBullet()
+    {
         GameObject shell = Instantiate(bullet, turret.transform.position, turret.transform.rotation);
         // Asignamos a velocidade lineal inicial multiplicando a dirección forward polo valor speed.
         shell.GetComponent<Rigidbody>().linearVelocity = speed * turretBase.forward;
     }
 
     // Rota o canón segundo o ángulo balístico calculado. Devolve o ángulo se é posible calculalo.
-    float? RotateTurret() {
+    float? RotateTurret()
+    {
         float? angle = CalculateAngle(true); // usamos a solución de menor ángulo
 
-        if (angle != null) {
+        if (angle != null)
+        {
             // Asignamos a rotación local en X para que o canón apunte cara arriba/abaixo
             turretBase.localEulerAngles = new Vector3(360.0f - (float)angle, 0.0f, 0.0f);
         }
@@ -50,7 +55,8 @@ public class TanksNPCController : MonoBehaviour {
     // Calcula o ángulo de disparo (en graos) necesario para alcanzar o obxectivo.
     // Usa a ecuación balística con velocidade inicial `speed` e gravidade fixa.
     // Se non hai solución real (baixo a raíz cadrada negativa), devolve null.
-    float? CalculateAngle(bool low) {
+    float? CalculateAngle(bool low)
+    {
         Vector3 targetDir = enemy.transform.position - this.transform.position;
         float y = targetDir.y; // altura relativa
         targetDir.y = 0.0f;
@@ -59,7 +65,8 @@ public class TanksNPCController : MonoBehaviour {
         float sSqr = speed * speed;
         float underTheSqrRoot = (sSqr * sSqr) - gravity * (gravity * x * x + 2 * y * sSqr);
 
-        if (underTheSqrRoot >= 0.0f) {
+        if (underTheSqrRoot >= 0.0f)
+        {
             // Hai solucións reais; calculamos as dúas posibles (alta e baixa)
             float root = Mathf.Sqrt(underTheSqrRoot);
             float highAngle = sSqr + root;
@@ -67,12 +74,14 @@ public class TanksNPCController : MonoBehaviour {
 
             if (low) return (Mathf.Atan2(lowAngle, gravity * x) * Mathf.Rad2Deg);
             else return (Mathf.Atan2(highAngle, gravity * x) * Mathf.Rad2Deg);
-        } else
+        }
+        else
             // Non hai solución física para os parámetros dados
             return null;
     }
 
-    void Update() {
+    void Update()
+    {
         // Actualizamos o temporizador de disparo
         delay -= Time.deltaTime;
 
@@ -85,10 +94,13 @@ public class TanksNPCController : MonoBehaviour {
         float? angle = RotateTurret();
 
         // Se temos un ángulo válido e o temporizador permite disparar, creamos a bala
-        if (angle != null && delay <= 0.0f) {
+        if (angle != null && delay <= 0.0f)
+        {
             CreateBullet();
             delay = delayReset;
-        } else {
+        }
+        else
+        {
             // Se non disparamos, movémonos cara adiante ao ritmo moveSpeed
             this.transform.Translate(0.0f, 0.0f, Time.deltaTime * moveSpeed);
         }
