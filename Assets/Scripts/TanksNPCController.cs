@@ -7,6 +7,7 @@ using UnityEngine;
 // - Rota a base do inimigo cara ao obxectivo e rota o canón segundo o ángulo calculado.
 // - Dispara un prefab `bullet` establecendo a súa velocidade inicial.
 // Cambio para Commit Nuevo
+// Parece que vas por buen camino
 public class TanksNPCController : MonoBehaviour
 {
 
