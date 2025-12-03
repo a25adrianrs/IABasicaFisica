@@ -10,6 +10,7 @@ public class TimeFixedUpdateMove : MonoBehaviour
     // Valores altos poden facer que o obxecto atravese colisións se non se usa física.
     public float speed = 0.5f;
 
+
     // Chamado a intervalos fixos por Unity (fixos para a física).
     // Aquí movemos o transform en Z local multiplicando a velocidade polo delta de tempo.
     // Nota: en FixedUpdate, Time.deltaTime devolve o paso fixo; tamén se pode usar Time.fixedDeltaTime

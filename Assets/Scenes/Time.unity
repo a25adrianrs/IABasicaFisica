@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondsAdam
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -400,6 +404,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
       propertyPath: m_Name
       value: LateAdam
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
       propertyPath: m_RootOrder
@@ -479,6 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  rotationSpeed: 50
 --- !u!1 &937509916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
@@ -620,6 +629,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
       propertyPath: m_Name
       value: FixedAdam
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f12f2d44b2688054986e54861cc211dc, type: 3}
       propertyPath: m_RootOrder
