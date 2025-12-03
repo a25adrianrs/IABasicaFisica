@@ -26,7 +26,7 @@ public class TurretNPCController : MonoBehaviour
     // Axustes de movemento e tiro
     private float speed = 15.0f; // velocidade inicial da bala (unidades/segundo)
     private float rotSpeed = 5.0f; // velocidade de rotación da unidade cara ao obxectivo
-    private float moveSpeed = 1.0f; // velocidade de desprazamento da unidade cando non dispara
+    //private float moveSpeed = 1.0f; // velocidade de desprazamento da unidade cando non dispara
 
     // Control de cadencia de disparo
     static float delayReset = 0.2f;
