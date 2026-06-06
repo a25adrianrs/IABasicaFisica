@@ -48,10 +48,12 @@ public class TanksPlayerController : MonoBehaviour
         // como eixo local (x do transform do canón).
         if (Input.GetKey(KeyCode.T))
         {
+            // Rotamos o canón cara abaixo.
             transGun.RotateAround(transGun.position, transGun.right, -20.0f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.G))
         {
+            // Rotamos o canón cara arriba.
             transGun.RotateAround(transGun.position, transGun.right, 20.0f * Time.deltaTime);
         }
         else if (Input.GetKeyDown(KeyCode.B))

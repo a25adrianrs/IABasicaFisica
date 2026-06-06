@@ -58,6 +58,7 @@ public class TurretNPCController : MonoBehaviour
     // Se non hai solución real (baixo a raíz cadrada negativa), devolve null.
     float? CalculateAngle(bool low)
     {
+        // Calculamos a dirección e distancia ao obxectivo no plano horizontal
         Vector3 targetDir = enemy.transform.position - this.transform.position;
         float y = targetDir.y; // altura relativa
         targetDir.y = 0.0f;
